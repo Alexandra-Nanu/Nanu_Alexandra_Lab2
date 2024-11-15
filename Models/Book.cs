@@ -9,6 +9,8 @@ namespace Nanu_Alexandra_Lab2.Models
         public int ID { get; set; }
 
         [Display(Name = "Book Title")]
+        [Required(ErrorMessage ="The title is mandatory!")]
+        [StringLength(150, MinimumLength = 3, ErrorMessage = "Must have a minimum of 3 and a maximum of 150 characters!")]
         public string Title { get; set; }
         public int? AuthorID { get; set; }
         public Author? Author { get; set; } // navigation property
